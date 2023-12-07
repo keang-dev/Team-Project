@@ -58,8 +58,8 @@ class AuthController extends Controller
         if($valilator->fails()){
             return response()->json([
                 'data' => 'error',
-                'status' => 'errors',
-                'sms' => 'Invalid email or password!'
+                'status' => '<div class="text-danger">errors</div>',
+                'sms' => '<div class="text-danger">សូមបំពេញអាសយដ្ឋាន និងពាក្យសម្ងាត់!<div>'
             ]);
         }
 
@@ -68,19 +68,19 @@ class AuthController extends Controller
             return response()->json([
                 'data' => 'error',
                 'status' => 'error',
-                'sms' => 'Account not exist!'
+                'sms' => 'សូមបំពេញអាសយដ្ឋានឲ្យបានត្រឹមត្រូវ!'
             ]);
         }elseif($user->active == 0){
             return response()->json([
                 'data' => 'error',
                 'status' => 'error',
-                'sms' => 'Your account was blocked!'
+                'sms' => 'អាសយដ្ឋានរបស់អ្នកត្រូវបានបិទ!'
             ]);
         }elseif(!Hash::check($request->password, $user->password)){
             return response()->json([
                 'data' => 'error',
                 'status' => 'error',
-                'sms' => 'Invalid password!'
+                'sms' => 'សូមបំពេញពាក្យសម្ងាត់ឲ្យបានត្រឹមត្រូវ!'
             ]);
         }else{
             $attempt_data = [
@@ -94,13 +94,13 @@ class AuthController extends Controller
                 return response()->json([
                     'data' => ['user_data' => auth()->user(), 'token' => $token],
                     'status' => 'success',
-                    'sms' => 'បានជោគជ័យ!'
+                    'sms' => 'ចូលប្រើប្រាស់ប្រព័ន្ធ បានជោគជ័យ!'
                 ]);
             }else{
                 return response()->json([
                     'data' => 'error',
                     'status' => 'error',
-                    'sms' => 'Invalid email or password!'
+                    'sms' => 'សូមបំពេញអាសយដ្ឋាន និងពាក្យសម្ងាត់!'
                 ]);
             }
            
@@ -109,7 +109,7 @@ class AuthController extends Controller
     public function logout(Request $r){
         $r->user()->token()->revoke();
         // audit('is_logout','is_view',$r->user());
-        return response()->json(['status' => 'success', 'sms' => __('Logout Successfully !!!')]);
+        return response()->json(['status' => 'success', 'sms' => __('ចាកចេញបានជោគជ័យ!!!')]);
     }
     public function checkOTP(Request $r){
         $user = User::find($r->user_id);
