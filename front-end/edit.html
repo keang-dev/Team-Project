@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit</title>
+    <script src="https://code.jquery.com/jquery-3.6.3.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+</head>
+<body>
+    <input type="text" name="name">
+    <br>
+    <input type="text" name="name_en">
+    <br>
+    <button id="btn_save">Save</button>
+
+    <script>
+        $(document).ready(function(){
+            $('#btn_save').click(function(){
+                const querySting = getUrlVars();
+                var id = querySting.id
+                let name = $('input[name="name"]').val();
+                let name_en = $('input[name="name_en"]').val();
+                if(name==''){
+                    alert('Please enter name');
+                    return false;
+                }
+
+                axios({
+                    method: 'post',
+                    url: 'http://localhost:8002/api/province/update',
+                    data:{
+                        'name': name,
+                        'name_en': name_en,
+                        'id': id
+                    },
+                    headers:{
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json',
+                        'apikey': 'abc123',
+                        'Authorization': sessionStorage.getItem('token')
+                    }
+                })
+                .then(function (response) {
+                    console.log(response.data);
+                    $('input[name="name"]').val('');
+                    $('input[name="name_en"]').val('');
+                    alert(response.data.msm)
+                    window.location.href = 'file:///Users/rithy/Documents/teaching/laravel-advance/staff/front-end/index.html';
+
+                });
+
+            });
+        });
+
+
+            if(!sessionStorage.getItem('token')){
+                window.location.href = 'file:///Users/rithy/Documents/teaching/laravel-advance/staff/front-end/login.html';
+            }
+            function getData(){
+                const querySting = getUrlVars();
+                var id = querySting.id
+                // GET request for list of province
+                axios({
+                    method: 'get',
+                    url: 'http://localhost:8002/api/province/detail/'+id,
+                    headers:{
+                        'apikey': 'abc123',
+                        'Authorization': sessionStorage.getItem('token')
+                    }
+                })
+                .then(function (response) {
+                console.log(response.data);
+                const data = response.data.data;
+                if(response.data.status==200){
+                     $('input[name="name"]').val(data.name)
+                     $('input[name="name_en"]').val(data.name_en)
+                }
+                }).catch(
+                    function (error) {
+                    console.error(error);
+                    return false;
+                    // return Promise.reject(error)
+                    }
+                )
+            }
+
+        getData(); //call 
+
+
+        
+
+
+        // Read a page's GET URL variables and return them as an associative array.
+        function getUrlVars()
+        {
+            var vars = [], hash;
+            var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+            for(var i = 0; i < hashes.length; i++)
+            {
+                hash = hashes[i].split('=');
+                vars.push(hash[0]);
+                vars[hash[0]] = hash[1];
+            }
+            return vars;
+        }
+
+    </script>
+</body>
+</html>

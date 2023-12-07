@@ -1,0 +1,118 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+use DB;
+use DataTables;
+use Carbon\Carbon;
+use App\Models\Audits;
+use App\Models\Delegations;
+
+class HomeController extends Controller
+{
+        // public function index(Request $req){
+      
+    //     if($req->ajax()){
+    //         $data = DB::table('audits')
+         
+    //         ->select(
+    //             'audits.*',
+               
+    //         )
+    //         ->where('audits.audit_active', 1);
+    //         return Datatables::of($data)
+    //                 ->addIndexColumn()
+    //                 ->addColumn('action', function($row){
+    //                     $edit_route = route('audit.edit', $row->id);
+    //                     $btn_edit = '<a href="'.$edit_route.'" class="btn btn-info btn-sm"><i class="fa fa-edit"></i></a>' ;
+    //                     $btn_delete = btn_delete('employees', 'employee', 'delete', $row->id);
+    //                     $btns = $btn_edit.' '.$btn_delete;
+    //                     return $btns;
+    //                 })
+                   
+    //             ->rawColumns(['action'])
+    //            	->make(true);
+
+    //     }
+    //     return view('');
+    // }
+    public function index(Request $req)
+    {
+        // $age1_17 = [$this->reverse_birthday(60), $this->reverse_birthday(90)];
+        $dateS=Carbon::now()->subDays(60)->format('Y-m-d');
+        // $dateL=Carbon::now()->subDays(1)->format('Y-m-d');
+        $data['audits'] = DB::table('audits')
+        ->where('audit_active', 1)
+        ->whereDate('created_at', '<=', $this->reverse_birthday(0))
+        ->whereDate('created_at', '>=', $this->reverse_birthday(1))
+        ->select(
+            'audits.*',
+            'audits.id',
+        )
+        ->get();
+       
+        return view('home',$data);
+    }
+
+    public function Edit(Request $id)
+    {
+            $audits = audits::find($id);
+            $data['audits'] = $audits;
+            $data['delegations'] = DB::table('delegations')
+                // ->where('active', 1)
+                ->where('audit_id', $id)
+                ->orderBy('created_at', 'desc')
+                ->get();
+        return view('UI.Table.auditee.index', $data); 
+    }
+   
+    public function audit_delegation(Request $id){
+            if($id->ajax()){
+                
+                $data = DB::table('delegations')
+                ->join('audits', 'delegations.audit_id', 'audits.id')
+                
+
+                ->select(
+                    'delegations.id', 
+                )
+                ->where('audit_id', $id->audit_id);
+                return Datatables::of($data)
+                        ->addIndexColumn()
+                        ->addColumn('actionpob', function($row){
+                           
+                        })
+                       
+                    ->rawColumns(['actionpob'])
+                       ->make(true);
+                     
+            } 
+    }
+
+
+    public function delegation_save(Request $req){
+        $data['audit_id'] = $req->audit_id;
+        $data['delegation_name_kh'] = $req->delegation_name_kh;
+        $data['delegation_name_en'] = $req->delegation_name_en;
+        $data['in_by'] = $req->in_by;
+
+        $id = DB::table('delegations')->insertGetId($data);
+        
+        if($id)
+        {
+            $code= sprintf("%06d", $id). "AD";
+            DB::table('delegations')
+                ->where('id', $id)
+                ->update(['delegation_code' =>$code]);  
+          
+        }
+        if($id){
+            return redirect()->back()->with('success', 'Delegation info has been saved successfully.');
+        }
+        return redirect()->back()->with('error', 'Somthing went wrong! Please try again.');
+    }
+    public function reverse_birthday( $years ){
+        return date('Y-m-d', strtotime($years . 'years ago'));
+    }
+}

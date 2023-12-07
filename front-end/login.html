@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <script src="https://code.jquery.com/jquery-3.6.3.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <h3>Login</h3>
+    <input type="text" name="email" placeholder="Email" required>
+    <br>
+    <input type="password" name="password" placeholder="Password" required>
+    <br>
+    <button id="btn_login">
+        Login
+    </button>
+
+    <script>
+        $(document).ready(function(){
+            $('#btn_login').click(function(){
+                let email = $('input[name="email"]').val();
+                let password = $('input[name="password"]').val();
+                if(email=='' || password == ''){
+                    alert('Please enter email and password');
+                    return false;
+                }
+
+                axios({
+                    method: 'post',
+                    url: 'http://localhost:8002/api/login',
+                    data:{
+                        'email': email,
+                        'password': password,
+                    },
+                    headers:{
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json',
+                        'apikey': 'abc123'
+                    }
+                })
+                .then(function (response) {
+                    console.log(response.data.data.token);
+                    if(response.data.status == 200){
+                        sessionStorage.setItem('token', 'Bearer '+response.data.data.token)
+                        setTimeout(() => {
+                            window.location.href = 'file:///Users/rithy/Documents/teaching/laravel-advance/staff/front-end/index.html';
+                        }, 100);
+                    }else{
+                        alert(response.data.msm)
+                    }
+                });
+
+            });
+        })
+        function login(){
+
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,1 @@
+define(["module"],function(module){"use strict";function HaHistory(injector,slide){injector.injectMarked(this),this.history=slide.get("ha-history-list").data.history}return function(providers){providers.$compile.component("fHaHistory",{controller:HaHistory,templateUrl:function(loader){return loader.base_path("f-ha-history.html",module)}})}});

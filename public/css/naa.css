@@ -1,0 +1,255 @@
+body {
+    font-family: 'Khmer OS Battambang', cursive;  
+}
+.titleTable{
+    font-family: 'Khmer OS Muol Light', cursive;  
+    font-size: 22px;
+    color:rgb(16, 7, 178);
+    /* background-color: rgb(41, 22, 209); */
+}
+.listTable{
+    font-family: 'Khmer OS Battambang', cursive;  
+    font-size: 16px;
+    color:rgb(16, 7, 178);
+    /* background-color: rgb(41, 22, 209); */
+}
+.ul01{
+    color:rgb(7, 4, 68);
+    text-decoration: line-through;
+}
+.fonttreeview{
+    font-size: 14px;
+}
+.button-fix {
+    position: fixed;
+    bottom: 5px;
+    right: 10px;
+    z-index: 1;
+    margin: 0;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+
+}
+.font16{
+    font-family: 'Khmer OS Battambang', cursive;  
+    font-size: 16px;
+    color:rgb(16, 7, 178);
+}
+
+.main-footer {
+    padding: 2rem;
+} 
+.border5 {
+  
+    border: 8px solid rgb(32, 0, 128);
+
+}
+
+.border1 {
+    /* border-style: double; */
+    border-block:  solid;
+    /* background: #cce5ff; */
+    color: darkblue;
+    padding: 10px;
+}
+
+.contant {
+    font-size: 20px;
+    font-family: 'Khmer OS Battambang', cursive;
+    color: rgb(16, 7, 178);
+}
+
+.row {
+    font-size: 16px;
+}
+
+.modal-dialog1 {
+    margin: auto;
+    position: relative;
+    width: 60%;
+    padding: 10px;
+    pointer-events: none;
+}
+
+.model-font-size {
+    font-size: 14px;
+}
+
+.modelday {
+    font-size: 16px;
+}
+
+.my-image {
+    height: 200px; 
+    width: 200px; 
+}
+
+table,
+td,
+th {
+    border: 1px solid black;
+}
+
+#table1 {
+    border-collapse: separate;
+}
+
+#table2 {
+    border-collapse: collapse;
+}
+
+/* Dashed border */
+hr.dashed {
+    border-top: 3px dashed #bbb;
+}
+
+/* Dotted border */
+hr.dotted {
+    border-top: 3px dotted #bbb;
+}
+
+/* Solid border */
+hr.solid {
+    border-top: 3px solid #bbb;
+}
+
+/* Rounded border */
+hr.rounded {
+    border-top: 8px solid #bbb;
+    border-radius: 5px;
+}
+/* printer hidden */
+@media print {
+    .print_hidden {
+        display: none !important;
+    }
+}
+
+/* image Profile */
+.avatar {
+    vertical-align: middle;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+  }
+  .avatar_user_profile {
+    vertical-align: middle;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+  }
+
+  .font10{font-size: 10px;}.font11{font-size: 11px;}.font12{font-size: 12px;}.font14{font-size: 14px;}.font16{font-size: 16px;}.font18{font-size: 18px;}.font20{font-size: 20px;}.font22{font-size: 22px;}
+  .card-orange{
+    background-color: rgb(247, 195, 131);
+    border: 12px solid rgb(225, 127, 7);
+    /* border-style: solid; */
+  }
+  .card-center{
+    text-align: center;
+  }
+  /* progressBar  */
+  * {
+    box-sizing: border-box;
+}
+
+#progress {
+    padding: 0;
+    list-style-type: none;
+    font-family: arial;
+    font-size: 10px;
+    clear: both;
+    line-height: 1em;
+    margin: 0 -1px;
+    text-align: center;
+}
+
+#progress li {
+    float: left;
+    padding: 10px 30px 10px 40px;
+    background: rgb(250, 197, 4);
+    color: rgb(250, 197, 4);
+    position: relative;
+    /* border-top: 1px solid rgb(255, 253, 253);
+    border-bottom: 1px solid rgb(250, 248, 248); */
+    width: 20%;
+    margin: 0 3px;
+}
+#progress ProgressText {
+    float: left;
+    padding: 10px 10px 10px 40px;
+    color: rgb(16, 7, 178);
+    position: relative;
+    width: 10%;
+    margin: 0 1px;
+}
+
+#progress li:before {
+    content: '';
+    border-left: 16px solid rgb(249, 226, 197);
+    border-top: 16px solid transparent;
+    border-bottom: 16px solid transparent;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+}
+
+#progress li:after {
+    content: '';
+    border-left: 16px solid ;
+    border-top: 16px solid transparent;
+    border-bottom: 16px solid transparent;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    z-index: 20;
+}
+
+#progress li.active {
+    background: rgb(54, 121, 244);
+}
+
+#progress li.active:after {
+    border-left-color: rgb(54, 121, 244);
+}
+.cardbody {
+    -ms-flex: 0 0 0 0auto;
+    flex: 0 0 0 0 auto;
+    min-height: 1px;
+    padding: 1.25rem;
+    padding-top: 1.25rem;
+    padding-right: 1.25rem;
+    padding-bottom: 1.25rem;
+    padding-left: 1.25rem;
+}
+.card1 {
+    box-shadow: 0 0 1px rgba(0,0,0,.125), 0 1px 3px rgba(0,0,0,.2);
+    margin-bottom: 1rem;
+}
+.card1 {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 0 solid rgba(0,0,0,.125);
+    border-radius: 0.25rem;
+}
+
+.container, .container-fluid1, .container-lg, .container-md, .container-sm, .container-xl {
+    width: 100%;
+    padding-right: 0px;
+    padding-left: 0px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+
+
+

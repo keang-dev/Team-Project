@@ -1,0 +1,26 @@
+body:not(.sidebar-mini-md):not(.sidebar-mini-xs):not(.layout-top-nav) .content-wrapper, body:not(.sidebar-mini-md):not(.sidebar-mini-xs):not(.layout-top-nav) .main-footer, body:not(.sidebar-mini-md):not(.sidebar-mini-xs):not(.layout-top-nav) .main-header {
+    transition: margin-left .3s ease-in-out;
+    margin-left: 0;
+}
+label:not(.form-check-label):not(.custom-file-label) 
+{
+    font-weight: normal;
+}
+.main-footer{
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+.navbar{
+  padding: 2px;
+}
+.card-body{
+  padding: 8px;
+}
+.txt{
+  width: 95%;
+}
+.mypage .page-link{
+  padding: 3px 9px;
+}

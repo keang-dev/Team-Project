@@ -1,0 +1,48 @@
+@if($one_delegation == 0 )
+@include('UI.Table.delegation.create')
+@endif
+<div class="row">
+    <div class="col-12">
+        <!-- <table id="audit_delegation" class="table table-bordered table-striped dataTable dtr-inline"
+            aria-describedby="audit_delegation_info">
+            <thead>
+
+                <tr class="listTable">
+                    <td>{{__('t.N.')}}</td>
+                    <td>{{__('t.delegation_code')}}</td>
+                    <td>{{__('t.audit_id')}}</td>
+
+
+                    <td>{{__('t.actions')}}</td>
+                </tr>
+            </thead>
+
+        </table> -->
+
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-12">
+        <table class="table table-bordered table-striped dtr-inline">
+            <thead>
+                <tr>
+                    <th>ល.រ</th>
+                    <th>ឈ្មោះប្រតិភូ</th>
+                    <th>តួនាទី</th>
+                </tr>
+            </thead>
+
+            <body>
+                @php($i=1)
+                @foreach($delegations as $d)
+                <tr>
+                    <td>{{$i++}}</td>
+                    <td>{{$d->delegation_name_kh}}</td>
+                    <td>{{$d->audit_id}}</td>
+
+                </tr>
+                @endforeach
+            </body>
+        </table>
+    </div>
+</div>

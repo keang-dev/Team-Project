@@ -1,0 +1,22 @@
+.scrollToTop {
+    margin: 0 30px 20px 0;
+    text-align: center;
+    text-decoration: none;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 50px;
+    background: #000;
+    height: 50px;
+    display: none;
+    line-height: 50px;
+    color: #fff;
+  }
+  
+  .scrollToTop:hover {
+    text-decoration: none;
+  }
+  
+  body {
+    height: 5000px;
+  }
