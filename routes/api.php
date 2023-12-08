@@ -45,6 +45,7 @@ Route::post('/entity/delete','App\Http\Controllers\Api\EntityController@delete')
 Route::post('/entity/update','App\Http\Controllers\Api\EntityController@update');
 Route::post('/entity/store','App\Http\Controllers\Api\EntityController@store');
 // Audit
+// Route::get('/audit/plan/2','App\Http\Controllers\Api\AuditController@index2');
 Route::get('/audit/plan','App\Http\Controllers\Api\AuditController@index1');
 Route::get('/audit/plan/edit','App\Http\Controllers\Api\AuditController@edit');
 
@@ -52,6 +53,12 @@ Route::get('/audit','App\Http\Controllers\Api\AuditController@index');
 Route::post('/audit/delete','App\Http\Controllers\Api\AuditController@delete');
 Route::post('/audit/update','App\Http\Controllers\Api\AuditController@update');
 Route::post('/audit/store','App\Http\Controllers\Api\AuditController@store');
+
+Route::get('/dashboard','App\Http\Controllers\Api\DashboardController@index');
+Route::get('/dashboard/edit','App\Http\Controllers\Api\DashboardController@edit');
+
+Route::get('/dashboard/delegation_team','App\Http\Controllers\Api\DashboardController@delegation_team');
+
 
         
          //student

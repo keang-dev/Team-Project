@@ -9,6 +9,7 @@ use App\Models\Audit;
 use Carbon\Carbon;
 class AuditController extends Controller
 {
+
     public function index1(Request $r)
     {
      
