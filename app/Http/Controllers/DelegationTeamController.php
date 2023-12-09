@@ -22,6 +22,7 @@ class DelegationTeamController extends Controller
                 DB::raw("CONCAT(staffs.staff_first_name_km,' ', staffs.staff_last_name_km) as full_name"),
             )
             ->where('delegation_teams.active', 1);
+
             return Datatables::of($data)
                     ->addIndexColumn()
                     ->addColumn('action', function($row){

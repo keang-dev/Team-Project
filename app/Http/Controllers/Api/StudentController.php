@@ -12,6 +12,7 @@ use App\Imports\StudentsImport;
 class StudentController extends Controller
 {
     public function index(Request $r){
+        $user_id = request()->header('user_id');
         $data['students'] = DB::table('students')->select('*')->paginate(100);
         $data['export'] = url('/export'); 
         $data['import'] = asset('/excels/students.xlsx');
