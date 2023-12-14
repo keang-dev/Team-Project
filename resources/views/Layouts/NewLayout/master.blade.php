@@ -21,7 +21,7 @@
         <!-- Navbar -->
         @include('layouts.NewLayout.navbar')
         <!-- Sidebar -->
-        @include('layouts.NewLayout.sidebar')
+        @include('layouts.sidebar')
         <!-- dynamic content  -->
         @include('layouts.NewLayout.UI.body')
     </div>

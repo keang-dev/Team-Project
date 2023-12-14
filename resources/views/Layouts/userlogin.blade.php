@@ -13,7 +13,7 @@
             </a>
             <div class="dropdown-divider"></div>
             <a href="#" class="dropdown-item">
-                <i class="fa fa-user text-info mr-2"></i>ព័ត៌មានផ្ទាល់ខ្លួន
+                <i class="fa fa-user text-info mr-2"></i>{{__('t.Profile')}}
             </a>
             <a href="{{route('user.logout')}}" class="dropdown-item">
                 <i class="fa fa-sign-out-alt text-danger mr-2"></i> ចាកចេញ

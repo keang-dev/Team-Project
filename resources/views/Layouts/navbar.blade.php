@@ -4,12 +4,13 @@
         <li class="nav-item">
             <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
         </li>
-        <li class="nav-item d-none d-sm-inline-block">
+        <li class="nav-item">
             <a href="#" class="nav-link"> <i class="fa fa-home"></i> ទំព័រដើម</a>
         </li>
+
         @if(check_permission('nov bar', 'create_audit'))
         <li class="nav-item d-none d-sm-inline-block">
-            <a href="{{route('ChengeLayout')}}" class="nav-link"> <i class="fa fa-plus"></i> បញ្ចូលផែនការសវនកម្មថ្មី</a>
+            <a href="{{route('ChengeLayout')}}" class="nav-link"> <i class="fa fa-plus"></i> ផែនការសវនកម្ម</a>
         </li>
         @endif
     </ul>
@@ -39,7 +40,7 @@
             </div>
         </li>
         <!-- Notifications Dropdown Menu -->
-        <li class="nav-item dropdown">
+        <!-- <li class="nav-item dropdown">
             <a class="nav-link" data-toggle="dropdown" href="#">
                 <i class="far fa-bell"></i>
                 <span class="badge badge-warning navbar-badge"></span>
@@ -64,7 +65,7 @@
                 <div class="dropdown-divider"></div>
                 <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
             </div>
-        </li>
+        </li> -->
         <li class="nav-item">
             <a class="nav-link" data-widget="fullscreen" href="#" role="button">
                 <i class="fas fa-expand-arrows-alt"></i>

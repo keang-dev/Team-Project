@@ -79,7 +79,7 @@
     /* border-color: #dee2e6 #dee2e6 #fff; */
 }
 
-.nav-link {
+.nav-link1 {
     display: block;
     padding: 0;
 }
@@ -94,7 +94,7 @@
     <div class="card-header p-0 pt-1 border-bottom-0">
         <ul class="nav" id="custom-tabs-three-tab" role="tablist">
             <li class="nav-item row">
-                <a class="nav-link active" id="custom-tabs-three-home-tab" data-toggle="pill"
+                <a class="nav-link1 active" id="custom-tabs-three-home-tab" data-toggle="pill"
                     href="#custom-tabs-three-home" role="tab" aria-controls="custom-tabs-three-home"
                     aria-selected="false">
                     <div class="">
@@ -108,7 +108,7 @@
                         </div>
                     </div>
                 </a>
-                <a class="nav-link  " id=" custom-tabs-three-profile-tab" data-toggle="pill"
+                <a class="nav-link1" id=" custom-tabs-three-profile-tab" data-toggle="pill"
                     href="#custom-tabs-three-profile" role="tab" aria-controls="custom-tabs-three-profile"
                     aria-selected="true">
                     <div class="bar1 text-center">

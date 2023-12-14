@@ -56,8 +56,11 @@
                                 <div class="card-header text-center" style="color:white;">
                                     {{ __('ចូលប្រើប្រាស់ប្រព័ន្ធ') }}
                                 </div>
+                                @if(session('failed'))
+                                <p class="bg-danger text-white p-3 mb-3">{!! session('error') !!}</p>
+                                @endif
                                 <div class="card-body" style="color:white;">
-                                    <form method="POST" action="{{ route('login') }}">
+                                    <form method="POST" action="{{ route('dologin') }}">
                                         @csrf
 
                                         <div class="row mb-3">
@@ -85,7 +88,8 @@
                                             <div class="col-md-6">
                                                 <input id="password" type="password"
                                                     class="form-control @error('password') is-invalid @enderror"
-                                                    name="password" required autocomplete="current-password">
+                                                    name="password" value="{{ old('password') }}" required
+                                                    autocomplete="current-password">
 
                                                 @error('password')
                                                 <span class="invalid-feedback" role="alert">
@@ -135,6 +139,15 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous">
     </script>
+    <!-- SweetAlert2 -->
+    <script src="{{asset('assets/plugins/sweetalert2/sweetalert2.min.js')}}"></script>
+
+    <!-- Toastr -->
+    <script src="{{asset('assets/plugins/toastr/toastr.min.js')}}"></script>
+
+    <!-- Select2 -->
+    <script src="{{asset('assets/plugins/select2/js/select2.full.min.js')}}"></script>
+
 </body>
 
 </html>

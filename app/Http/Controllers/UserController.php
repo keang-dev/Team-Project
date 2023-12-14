@@ -9,9 +9,31 @@ use DB;
 use App\Models\User;
 use Carbon\Carbon;
 use Auth;
+use Validator;
+
 class UserController extends Controller
 {
-   
+    public function login()
+    {
+        return view('auth.login');
+    } 
+    public function dologin(Request $request){
+        // dd($request->all());
+      try { 
+        $request->validate([
+          'email' => 'required|email|max:100',
+          'password' => ['required', 'min:6'],
+        ]);
+      } catch (\Throwable $th) {
+        return redirect()->back()->with('failed',"សូមពិនិត្យ អ៊ីម៉ែល ឫលេខកូដម្ដងទៀត !");
+      }    
+      $isMatch = Auth::attempt(['email' => $request->email, 'password' => $request->password]);      
+      // if ($isMatch) return redirect()->intended(route('dashboard.index')); else return redirect()->back()->with('failed', __('auth.failed'));
+      if ($isMatch) 
+        return redirect()->intended(route('home')); 
+      else 
+        return redirect()->back()->with('failed',"សូមពិនិត្យ អ៊ីម៉ែល ឫលេខកូដម្ដងទៀត !");
+    }
     public function index(Request $req){
         
 

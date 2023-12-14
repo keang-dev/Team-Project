@@ -89,6 +89,6 @@
         </li>
     </ul>
     <!-- navbar-nav  User logo and username-->
-    @include('layouts.NewLayout.UI.userlogin')
+    @include('layouts.userlogin')
     <!-- /navbar-nav  User logo and username-->
 </nav>
