@@ -53,7 +53,7 @@
                             <i class="right fas fa-angle-left"></i>
                         </p>
                     </a>
-                    <ul class="nav nav-treeview">
+                    <ul class="nav nav-treeview ml-2">
                         <!-- <li class="nav-item">
                             <a href="{{route('language.greeting_create_en')}}" class="nav-link" id="menu_greeting_en">
                                 <i class="far fa-circle nav-icon"></i>

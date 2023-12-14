@@ -6,7 +6,7 @@
             <i class="right fas fa-angle-left"></i>
         </p>
     </a>
-    <ul class="nav nav-treeview">
+    <ul class="nav nav-treeview ml-2">
         <div class="dropdown-divider"></div>
         <!-- <li class="nav-item">
             <a href="" class="nav-link text-yellow">
