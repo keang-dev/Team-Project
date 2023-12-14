@@ -1,6 +1,7 @@
 <?php
 
-$en_e = [
-	
+$en_q = [
+
+	'q' => 'q',
 	'GREETINGTEXT'
 ];

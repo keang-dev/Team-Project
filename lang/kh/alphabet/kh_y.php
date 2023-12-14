@@ -1,6 +1,5 @@
 <?php
 
-$en_e = [
-	
+$kh_y= [
 	'GREETINGTEXT'
 ];

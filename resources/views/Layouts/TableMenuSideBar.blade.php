@@ -2,17 +2,17 @@
     <a href="#" class="nav-link">
         <i class="nav-icon fas fa-table"></i>
         <p>
-            {{__('Table')}}
+            {{__('t.Table')}}
             <i class="right fas fa-angle-left"></i>
         </p>
     </a>
     <ul class="nav nav-treeview">
         <div class="dropdown-divider"></div>
-        <li class="nav-item">
+        <!-- <li class="nav-item">
             <a href="" class="nav-link text-yellow">
                 <h5 class=""> {{__('Option 01')}}</h5>
             </a>
-        </li>
+        </li> -->
 
         <li class="nav-item">
             <a href="{{route('delegation.index')}}" class=" nav-link" id="menu_delegation">
@@ -23,121 +23,121 @@
         <li class="nav-item">
             <a href="{{route('delegation.role.index')}}" class=" nav-link" id="menu_delegation_role">
                 <i class="far fa-circle nav-icon"></i>
-                <p class="text-blue">(3)Delegation_role</p>
+                <p class="text-blue">{{__('t.delegation role')}}</p>
             </a>
         </li>
         <li class="nav-item">
             <a href="{{route('audit_type.index')}}" class=" nav-link" id="menu_audit_type">
                 <i class="far fa-circle nav-icon"></i>
-                <p class="text-blue">(6)Audit_Type</p>
+                <p class="text-blue">{{__('t.Audit Type<')}}/p>
             </a>
         </li>
         <li class="nav-item">
             <a href="{{route('audit_category.index')}}" class=" nav-link" id="menu_audit_category">
                 <i class="far fa-circle nav-icon"></i>
-                <p class="text-blue">(7)Audit_Category</p>
+                <p class="text-blue">{{__('t.Audit Category')}}</p>
             </a>
         </li>
         <li class="nav-item">
             <a href="{{route('audit_time.index')}}" class=" nav-link" id="menu_audit_time">
                 <i class="far fa-circle nav-icon"></i>
-                <p class="text-blue">(8)Audit_Time</p>
+                <p class="text-blue">{{__('t.Audit Time')}}</p>
             </a>
         </li>
         <li class="nav-item">
             <a href="{{route('audit_stds.index')}}" class=" nav-link" id="menu_audit_std">
                 <i class="far fa-circle nav-icon"></i>
-                <p class="text-blue">(9)Audit_std</p>
+                <p class="text-blue">{{__('t.Audit std')}}</p>
             </a>
         </li>
         <li class="nav-item">
             <a href="{{route('audit_status.index')}}" class=" nav-link" id="menu_audit_status">
                 <i class="far fa-circle nav-icon"></i>
-                <p class="text-blue">(10)Audit_Status</p>
+                <p class="text-blue">{{__('t.Audit_Status')}}</p>
             </a>
         </li>
         <li class="nav-item">
             <a href="{{route('audit_process_status.index')}}" class=" nav-link" id="menu_auditprocessstatus">
                 <i class="far fa-circle nav-icon"></i>
-                <p class="text-blue">(11)Audit_Process_Status</p>
+                <p class="text-blue">{{__('t.Audit Process Status')}}</p>
             </a>
         </li>
         <li class="nav-item">
             <a href="{{route('audit_step.index')}}" class=" nav-link" id="menu_audit_step">
                 <i class="far fa-circle nav-icon"></i>
-                <p class="text-blue">(13)Audit_Step</p>
+                <p class="text-blue">{{__('t.Audit Step')}}</p>
             </a>
         </li>
         <li class="nav-item">
             <a href="{{route('audit_qc.index')}}" class=" nav-link" id="menu_audit_qc">
                 <i class="far fa-circle nav-icon"></i>
-                <p class="text-blue">(15)Audit_QC</p>
+                <p class="text-blue">{{__('t.Audit QC')}}</p>
             </a>
         </li>
         <li class="nav-item">
-            <a href="{{route('audit_qa.index')}}" class=" nav-link" id="menu_audit_qa">
+            <a href="{{route('audit_qa.index')}}" c lass=" nav-link" id="menu_audit_qa">
                 <i class="far fa-circle nav-icon"></i>
-                <p class="text-blue">(17)Audit_QA</p>
+                <p class="text-blue">{{__('t.Audit QA')}}</p>
             </a>
         </li>
         <li class="nav-item">
             <a href="{{route('domain.index')}}" class=" nav-link" id="menu_domain">
                 <i class="far fa-circle nav-icon"></i>
-                <p class="text-blue">(19)Domain</p>
+                <p class="text-blue">{{__('t.Domain')}}</p>
             </a>
         </li>
         <li class="nav-item">
             <a href="{{route('audit.report.pfm.index')}}" class=" nav-link" id="menu_Audit_Report_PFM">
                 <i class="far fa-circle nav-icon"></i>
-                <p class="text-blue">(21)Audit_Report_PFM</p>
+                <p class="text-blue">{{__('t.Audit Report PFM')}}</p>
             </a>
         </li>
         <li class="nav-item">
             <a href="{{route('auditee.type.index')}}" class=" nav-link" id="menu_auditee_type">
                 <i class="far fa-circle nav-icon"></i>
-                <p class="text-blue">(22)Auditee_type</p>
+                <p class="text-blue">{{__('t.Auditee type')}}</p>
             </a>
         </li>
         <li class=" nav-item">
             <a href="{{route('auditee.person.index')}}" class=" nav-link" id="menu_auditee_person">
                 <i class="far fa-circle nav-icon"></i>
-                <p class="text-blue">(25)Auditee_Person</p>
+                <p class="text-blue">{{__('t.Auditee Person')}}</p>
             </a>
         </li>
         <li class="nav-item">
             <a href="{{route('auditee.contact.type.index')}}" class=" nav-link" id="menu_auditee_contact_type">
                 <i class="far fa-circle nav-icon"></i>
-                <p class="text-blue">(26)Auditee_Contact_Type</p>
+                <p class="text-blue">{{__('t.Auditee Contact Type')}}</p>
             </a>
         </li>
         <li class="nav-item">
             <a href="{{route('auditee.person.type.index')}}" class=" nav-link" id="menu_auditee_person_type">
                 <i class="far fa-circle nav-icon"></i>
-                <p class="text-blue">(28)Auditee_Person_Type</p>
+                <p class="text-blue">{{__('t.Auditee Person Type')}}</p>
             </a>
         </li>
         <li class="nav-item">
             <a href="{{route('client.type.index')}}" class=" nav-link" id="menu_client_type">
                 <i class="far fa-circle nav-icon"></i>
-                <p class="text-blue">Client_type</p>
+                <p class="text-blue">{{__('t.Client type')}}</p>
             </a>
         </li>
         <li class="nav-item">
             <a href="{{route('client.person.index')}}" class=" nav-link" id="menu_client_person">
                 <i class="far fa-circle nav-icon"></i>
-                <p class="text-blue">(32)Client_Person</p>
+                <p class="text-blue">{{__('t.Client Person')}}</p>
             </a>
         </li>
         <li class="nav-item">
             <a href="{{route('client.contact.type.index')}}" class=" nav-link" id="menu_client_contact_type">
                 <i class="far fa-circle nav-icon"></i>
-                <p class="text-blue">(33)Client_Contact_Type</p>
+                <p class="text-blue">{{__('t.Client Contact Type')}}</p>
             </a>
         </li>
         <li class="nav-item">
             <a href="{{route('client.person.type.index')}}" class=" nav-link" id="Client_Person_Type">
                 <i class="far fa-circle nav-icon"></i>
-                <p class="text-blue">(35)Client_Person_Type</p>
+                <p class="text-blue">{{__('t.Client Person Type')}}</p>
             </a>
         </li>
 
@@ -145,58 +145,58 @@
 
         <!-- ////////////////// -->
         <div class="dropdown-divider"></div>
-        <li class="nav-item">
+        <!-- <li class="nav-item">
             <a href="" class="nav-link text-yellow">
-                <h5 class=""> {{__('Option 02')}}</h5>
+                <h5 class=""> {{__('t.Option 02')}}</h5>
             </a>
-        </li>
+        </li> -->
 
         <li class="nav-item">
             <a href="{{route('audit.index')}}" class=" nav-link" id="menu_audit">
                 <i class="far fa-circle nav-icon"></i>
-                <p class="text-yellow">(5)Audit</p>
+                <p class="text-yellow">{{__('t.Audit')}}</p>
             </a>
         </li>
         <li class="nav-item">
             <a href="{{route('delegation.team.index')}}" class=" nav-link" id="menu_delegation_team">
                 <i class="far fa-circle nav-icon"></i>
-                <p class="text-yellow">(2)Delegation_Team</p>
+                <p class="text-yellow">{{__('t.Delegation Team')}}</p>
             </a>
         </li>
         <li class="nav-item">
             <a href="{{route('unit.index')}}" class=" nav-link" id="menu_unit">
                 <i class="far fa-circle nav-icon"></i>
-                <p class="text-yellow">(4)unit</p>
+                <p class="text-yellow">{{__('t.unit')}}</p>
             </a>
         </li>
         <li class="nav-item">
             <a href="{{route('audit.tracking.index')}}" class=" nav-link" id="menu_audit_tracking">
                 <i class="far fa-circle nav-icon"></i>
-                <p class="text-yellow">(12)Audit_Tracking</p>
+                <p class="text-yellow">{{__('t.Audit Tracking')}}</p>
             </a>
         </li>
         <li class="nav-item">
             <a href="{{route('audit.qc.review.index')}}" class=" nav-link" id="menu_audit_qc_review">
                 <i class="far fa-circle nav-icon"></i>
-                <p class="text-yellow">(14)Audit_QC_Review</p>
+                <p class="text-yellow">{{__('t.Audit QC Review')}}</p>
             </a>
         </li>
         <li class="nav-item">
             <a href="{{route('audit.qa.review.index')}}" class=" nav-link" id="menu_audit_qa_review">
                 <i class="far fa-circle nav-icon"></i>
-                <p class="text-yellow">(16)Audit_QA_Review</p>
+                <p class="text-yellow">{{__('t.Audit QA Review')}}</p>
             </a>
         </li>
         <li class="nav-item">
             <a href="{{route('audit.domain.index')}}" class=" nav-link" id="menu_audit_domain_index">
                 <i class="far fa-circle nav-icon"></i>
-                <p class="text-yellow">(18)Audit_Domain</p>
+                <p class="text-yellow">{{__('t.Audit Domain')}}</p>
             </a>
         </li>
         <li class="nav-item">
             <a href="{{route('audit.pfm.index')}}" class=" nav-link" id="menu_audit_pfm">
                 <i class="far fa-circle nav-icon"></i>
-                <p class="text-yellow">(20)Audit_PFM</p>
+                <p class="text-yellow">{{__('t.Audit PFM')}}</p>
             </a>
         </li>
         <li class="nav-item">
@@ -208,39 +208,39 @@
         <li class="nav-item">
             <a href="{{route('auditee.person.contact.index')}}" class=" nav-link" id="menu_auditee_person_contact">
                 <i class="far fa-circle nav-icon"></i>
-                <p class="text-yellow">(24)Auditee_Person_Contact</p>
+                <p class="text-yellow">{{__('t.Auditee Person Contact')}}</p>
             </a>
         </li>
         <li class="nav-item">
             <a href="{{route('auditee.organization.contact.index')}}" class=" nav-link"
                 id="menu_auditee_organization_contact">
                 <i class="far fa-circle nav-icon"></i>
-                <p class="text-yellow">(27)Auditee_Organization_Contact</p>
+                <p class="text-yellow">{{__('t.Auditee Organization Contact')}}</p>
             </a>
         </li>
         <li class="nav-item">
             <a href="{{route('client.index')}}" class=" nav-link" id="menu_client">
                 <i class="far fa-circle nav-icon"></i>
-                <p class="text-yellow">(30)Client</p>
+                <p class="text-yellow">{{__('t.Client')}}</p>
             </a>
         </li>
         <li class="nav-item">
             <a href="{{route('client.person.contact.index')}}" class=" nav-link" id="menu_client_person_contact">
                 <i class="far fa-circle nav-icon"></i>
-                <p class="text-yellow">(31)Client_Person_Contact</p>
+                <p class="text-yellow">{{__('t.Client Person Contact')}}</p>
             </a>
         </li>
         <li class="nav-item">
             <a href="{{route('client.organization.contact.index')}}" class=" nav-link"
                 id="menu_client_organization_contact">
                 <i class="far fa-circle nav-icon"></i>
-                <p class="text-yellow">(34)Client_Organization_Contact</p>
+                <p class="text-yellow">{{__('t.Client Organization Contact')}}</p>
             </a>
         </li>
         <li class="nav-item">
             <a href="{{route('client.auditee.index')}}" class=" nav-link" id="menu_client_auditee">
                 <i class="far fa-circle nav-icon"></i>
-                <p class="text-yellow">(36)Client_Auditee</p>
+                <p class="text-yellow">{{__('t.Client Auditee')}}</p>
             </a>
         </li>
 

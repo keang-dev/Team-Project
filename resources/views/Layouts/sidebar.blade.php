@@ -44,6 +44,33 @@
                 </li>
                 @include('layouts.TableMenuSideBar')
                 @include('layouts.UserMenuSideBar')
+                <li class="nav-item" id="menu_translate">
+                    <a href="#" class="nav-link">
+                        <img src="{{asset('icon/kh.png')}}" alt="" width="27" width="25"
+                            class="brand-image img-circle elevation-3 mr-1">
+                        <p>
+                            {{__('t.Translate')}}
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <!-- <li class="nav-item">
+                            <a href="{{route('language.greeting_create_en')}}" class="nav-link" id="menu_greeting_en">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Greeting En</p>
+                            </a>
+                        </li> -->
+                        <li class="nav-item">
+                            <a href="{{route('language.greeting_kh')}}" class="nav-link" id="menu_greeting_en">
+                                <img src="{{asset('icon/kh.png')}}" alt="" width="27" width="25"
+                                    class="brand-image img-circle elevation-3 mr-1">
+                                <p>{{__('t.Translate to khmer')}}</p>
+                            </a>
+                        </li>
+
+                    </ul>
+                </li>
+
             </ul>
         </nav>
         <!-- /.sidebar-menu -->

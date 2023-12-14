@@ -1,6 +1,6 @@
 <?php
 
-$en_e = [
-	
+$en_v = [
+
 	'GREETINGTEXT'
 ];
