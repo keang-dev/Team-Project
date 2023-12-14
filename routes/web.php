@@ -12,16 +12,16 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-// Auth::routes();
-Route::post('/dologin', [App\Http\Controllers\UserController::class, 'dologin'])->name('dologin');
-Route::get('/login', [App\Http\Controllers\UserController::class, 'login'])->name('login');
+Auth::routes();
+// Route::post('/dologin', [App\Http\Controllers\UserController::class, 'dologin'])->name('dologin');
+// Route::get('/login', [App\Http\Controllers\UserController::class, 'login'])->name('login');
 Route::get('/user/logout', [App\Http\Controllers\UserController::class, 'logout'])->name('user.logout');
 Route::get('/swtich-lang/{lang}', [App\Http\Controllers\LanguageController::class, 'switchLang'])->name('language.change');
 Route::get('/greeting/create-en', [App\Http\Controllers\LanguageController::class, 'createGreeting'])->name('language.greeting_create_en');
 Route::post('/greeting/save/en', [App\Http\Controllers\LanguageController::class, 'greetingEn'])->name('language.greeting_en');
 Route::get('/greeting/kh', [App\Http\Controllers\LanguageController::class, 'greetingKh'])->name('language.greeting_kh');
 Route::post('/greeting/kh/save', [App\Http\Controllers\LanguageController::class, 'greetingkhSave'])->name('language.greeting_kh_save');
-Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::group(['middleware' => ['auth', 'useraction']], function(){
     // Route::get('/', function () {
     //     return view('welcome');

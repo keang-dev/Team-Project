@@ -43,10 +43,10 @@
                             width="150" , height="180">
                         <div>
                             <h3 style=' font-family: Khmer OS Muol Light; font-size:24px;color:white;'>
-                                {{__('t.NAA')}}
+                                អាជ្ងាធរសវនកម្មជាតិ
                             </h3>
                             <h4 style='font-size:20px;color:white;'>
-                                <b>{{__('t.System Audit')}}</b>
+                                <b>ប្រព័ន្ធគ្រប់គ្រងការងារសវនកម្ម</b>
                             </h4>
                         </div>
                     </div>
@@ -54,18 +54,18 @@
                         <div class="col-md-12">
                             <div class="card" style="background-color:hsla(89, 43%, 51%, 0.3);">
                                 <div class="card-header text-center" style="color:white;">
-                                    {{__('t.Login to System')}}
+                                    {{ __('ចូលប្រើប្រាស់ប្រព័ន្ធ') }}
                                 </div>
                                 @if(session('failed'))
                                 <p class="bg-danger text-white p-3 mb-3 text-center">{!! session('failed') !!}</p>
                                 @endif
                                 <div class="card-body" style="color:white;">
-                                    <form method="POST" action="{{ route('login') }}">
+                                    <form method="POST" action="{{ route('dologin') }}">
                                         @csrf
 
                                         <div class="row mb-3">
                                             <label for="email"
-                                                class="col-md-4 col-form-label text-md-end">{{__('t.Email')}}</label>
+                                                class="col-md-4 col-form-label text-md-end">{{ __('ឈ្មោះគណនី') }}</label>
 
                                             <div class="col-md-6">
                                                 <input id="email" type="email"
@@ -83,15 +83,14 @@
 
                                         <div class="row mb-3">
                                             <label for="password"
-                                                class="col-md-4 col-form-label text-md-end">{{__('t.Password')}}</label>
+                                                class="col-md-4 col-form-label text-md-end">{{ __('លេខកូដសម្ងាត់') }}</label>
 
                                             <div class="col-md-6">
-                                                <input id="password" type="password" class="form-control"
+                                                <input id="password" type="password"
+                                                    class="form-control @error('password') is-invalid @enderror"
                                                     name="password" value="{{ old('password') }}" required
                                                     autocomplete="current-password">
 
-                                                <input class="mt-3" type="checkbox"
-                                                    onclick="myFunction()">{{__('t.Show Password')}}
                                                 @error('password')
                                                 <span class="invalid-feedback" role="alert">
                                                     <strong>{{ $message }}</strong>
@@ -116,9 +115,14 @@
                                         <div class="row mb-0">
                                             <div class="col-md-0 offset-md-6">
                                                 <button type="submit" class="btn btn-primary">
-                                                    {{ __('t.Login') }}
+                                                    {{ __('ចូលប្រើប្រាស់') }}
                                                 </button>
-
+                                                <!-- 
+                                                @if (Route::has('password.request'))
+                                                <a class="btn btn-link" href="{{ route('password.request') }}">
+                                                    {{ __('Forgot Your Password?') }}
+                                                </a>
+                                                @endif -->
                                             </div>
                                         </div>
                                     </form>
@@ -143,16 +147,7 @@
 
     <!-- Select2 -->
     <script src="{{asset('assets/plugins/select2/js/select2.full.min.js')}}"></script>
-    <script>
-    function myFunction() {
-        var x = document.getElementById("password");
-        if (x.type === "password") {
-            x.type = "text";
-        } else {
-            x.type = "password";
-        }
-    }
-    </script>
+
 </body>
 
 </html>
